@@ -1,0 +1,21 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1 align="center">{{header}}</h1>
+    {% if questions.count %}
+        {% for q in questions %}
+            <article>
+                <time datetime="{{q.time_create}}">{{q.time_create}}</time>
+                <details>
+                    <summary><font size="4">{{q.content}}</font></summary>
+                    <p>{{q.answer}}</p>
+                </details>
+                <br>
+            </article>
+        {% endfor %}
+    {% else %}
+      <p>Нету вопросов</p>
+    {% endif %}
+</main>
+{% endblock %}

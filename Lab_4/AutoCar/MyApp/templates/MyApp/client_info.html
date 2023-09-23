@@ -1,0 +1,21 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+{% if my_client.count %}
+      {% for c in my_client %}
+      <div class="client-info">
+
+    <h2>{{title}}</h2>
+    <p><strong>Имя:</strong> {{c.name}}</p>
+    <p><strong>Телефон:</strong> {{c.telephone}}</p>
+    <p><strong>Дата Рождения:</strong> {{c.date_of_birth}}</p>
+    <p><strong>Машины:</strong> {{c.display_cars}}</p>
+
+      </div>
+      {% endfor %}
+    {% else %}
+      <p>Нету клиента c таким id </p>
+    {% endif %}
+    </main>
+{% endblock %}

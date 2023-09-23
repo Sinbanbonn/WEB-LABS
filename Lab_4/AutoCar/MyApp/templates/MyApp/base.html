@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+
+    {% load static %}
+
+    <meta name="author" content="Eugene Kuznetsov">
+    <meta name="description" content="Круглосуточная отапливаемая автостоянка 'AutoCar'">
+    <link rel="stylesheet" type="text/css" href="{% static 'MyApp/css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'MyApp/images/favicon.ico' %}">
+
+</head>
+<body>
+
+{% block mainmenu %}
+<nav>
+    <ul class="menu">
+        {% for m in menu %}
+        <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock %}
+{% block footer %}
+<footer>
+    <address>
+    Made by Eugene  Kuznetsov
+    <a href = "https://www.instagram.com/evgeny_kuznetsovvv/" target="_blank">
+        <img src="{% static 'MyApp/images/inst.png' %}" alt = "Instagram" class = "instagram-logo" title="Instagram">
+    </a>
+    </address>
+</footer>
+{% endblock %}
+</body>
+</html>

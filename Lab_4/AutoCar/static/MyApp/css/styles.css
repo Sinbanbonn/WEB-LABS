@@ -1,0 +1,113 @@
+    ul.menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      overflow: hidden;
+    }
+
+    ul.menu li {
+      float: left;
+    }
+
+    ul.menu li a {
+      display: block;
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    ul.menu li a:hover {
+      background-color: #ddd;
+    }
+
+    .client-info {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .client-info h2 {
+      margin-top: 0;
+    }
+
+    .client-info p {
+      margin-bottom: 10px;
+    }
+
+    .data-container {
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            background-color: #f1f1f1;
+            padding: 10px;
+    }
+
+/* Основной стиль для блока footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+/* Стиль для ссылок внутри footer */
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Стиль для ссылок при наведении */
+footer a:hover {
+  text-decoration: underline;
+}
+
+main {
+    margin-bottom: 60px;
+}
+
+/* Стиль для логотипа Instagram */
+footer .instagram-logo {
+  width: 20px; /* Размер логотипа Instagram */
+  vertical-align: middle; /* Выравнивание по вертикали */
+  margin-left: 5px; /* Внешний отступ слева от логотипа */
+}
+
+.advertisement {
+  display: block;
+  text-align: center; /* Центрирование контента в баннере */
+  background-color: #f0f0f0; /* Цвет фона баннера */
+  padding: 10px; /* Внутренний отступ вокруг рекламы */
+}
+
+.advertisement img {
+  max-width: 100%; /* Установка максимальной ширины изображения для подгонки по размеру контейнера */
+  height: auto; /* Автоматическое сохранение пропорций изображения */
+}
+
+partners {
+  display: flex; /* Расположение компаний в строку */
+  justify-content: center; /* Выравнивание по горизонтали по центру */
+  align-items: center; /* Выравнивание по вертикали по центру */
+  padding: 20px; /* Внутренний отступ между компаниями */
+  background-color: #f0f0f0; /* Цвет фона списка партнеров */
+}
+
+.partner-link {
+  margin: 0 10px; /* Внешний отступ между компаниями */
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+
+.partner-logo {
+  max-width: 100px; /* Максимальная ширина логотипа */
+  height: auto; /* Автоматическое сохранение пропорций логотипа */
+}

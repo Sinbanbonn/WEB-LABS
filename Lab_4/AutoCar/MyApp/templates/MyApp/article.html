@@ -1,0 +1,16 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h2 align="center">{{title}}</h2>
+{% if new %}
+    <article>
+        <img src="{{new.photo.url}}" alt = "gsi" width="350" height="250">
+        <time datetime="{{new.time_create}}">{{new.time_create}}</time>
+        <p>{{new.content| linebreaks}}</p>
+    </article>
+    {% else %}
+      <p>Ошибка поиска</p>
+    {% endif %}
+</main>
+{% endblock %}

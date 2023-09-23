@@ -1,0 +1,23 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1 align="center" id="top_header">{{title}}</h1>
+    {% if news.count %}
+        {% for n in news %}
+        <article itemscope itemtype="https://schema.org/Article">
+        <h3 align="center" itemprop="headline">{{n}}</h3>
+        <img src="{{n.photo.url}}" alt = "gsi" width="300" height="200" itemprop="image">
+        <time datetime="{{n.time_create}}" itemprop="dateCreated">{{n.time_create}}</time>
+        <p itemprop="description">{{n.short_description| linebreaks}}</p>
+        <a href="{{ n.get_absolute_url }}">
+            <button>Читать далее</button>
+        </a>
+        </article>
+        {% endfor %}
+    <p align="center"><a href="#top_header">Начало страницы</a></p>
+    {% else %}
+      <p>Нету новостей</p>
+    {% endif %}
+</main>
+{% endblock %}

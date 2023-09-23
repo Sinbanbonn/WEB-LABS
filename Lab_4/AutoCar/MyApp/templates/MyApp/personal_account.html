@@ -1,0 +1,29 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<div class="data-container">
+    <p>Часовой пояс: {{zone}}</p>
+    <p>Дата: {{cur_date}}</p>
+    <strong>Курс Биткойна:</strong>
+    <p>USD: {{USD}}</p>
+    <p>EUR: {{EUR}}</p>
+</div>
+<h1>Добро пожаловать, {{user_name}}!</h1>
+<h2>Ваши автомобили:</h2>
+
+{% if my_cars.count %}
+    <ul>
+
+      {% for c in my_cars %}
+      <li>
+        <a href="{{ c.get_absolute_url }}">{{ c.number }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Нету ни одной машины</p>
+    {% endif %}
+    </main>
+{% endblock %}

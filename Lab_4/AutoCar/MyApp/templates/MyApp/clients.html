@@ -1,0 +1,20 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h2>{{title}}</h2>
+{% if my_clients.count %}
+    <ul>
+
+      {% for c in my_clients %}
+      <li>
+        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Нету ни одного клиента</p>
+    {% endif %}
+    </main>
+{% endblock %}

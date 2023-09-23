@@ -1,0 +1,24 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1 align="center">{{title}}</h1>
+    {% if vacancy.count %}
+    <section>
+         {% for v in vacancy %}
+            <article>
+                <h3 align="">{{v.name}}</h3>
+                <p><b>Обязанности: </b>{{v.description}}</p>
+                <hr>
+            </article>
+        {% endfor %}
+    </section>
+    <section>
+        <h2 align="center">Другие вакансии</h2>
+        <iframe src="https://ru.linkedin.com/" width="100%" height="600" frameborder="1">Обновите версию браузера</iframe>
+    </section>
+    {% else %}
+      <p>Отсутствуют вакансии</p>
+    {% endif %}
+</main>
+{% endblock %}

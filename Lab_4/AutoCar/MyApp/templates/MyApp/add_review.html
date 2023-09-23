@@ -1,0 +1,31 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1 align="center">{{title}}</h1>
+    <form action="{% url 'review_handler' %}"  method="post">
+        {% csrf_token %}
+        <fieldset title="add_review">
+            <legend>Ваш отзыв</legend>
+        <div>
+            <label for="rating">Оценка</label>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>Выберите оценку</option>
+                {% for mark in marks %}
+                <option value="{{mark}}">{{mark}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Отзыв:</label>
+            <textarea id="review" name="review" rows="4" cols="70" required></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Отправить">
+        </div>
+        </fieldset>
+    </form>
+</main>
+{% endblock %}

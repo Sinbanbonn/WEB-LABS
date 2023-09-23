@@ -1,0 +1,33 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+{% if space.count %}
+      {% for c in space %}
+      <div class="client-info">
+
+    <h2>{{title}}</h2>
+    <p><strong>Номер:</strong> {{c.number}}</p>
+    <p><strong>Цена:</strong> {{c.price}}</p>
+          {% if c.is_occupied %}
+          <p><strong>Занято машиной:</strong> {{c.car}}</p>
+          {% else %}
+          <p><strong>Свободно</strong></p>
+          {% endif %}
+      </div>
+      {% endfor %}
+
+    <h2>Изменить цену:</h2>
+    <form action="{% url 'parking_space' id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Изменить</button>
+    </form>
+    <h2></h2>
+    <a href="{% url 'delete_park_space' id %}"><button>Удалить парковочное место</button></a>
+
+    {% else %}
+      <p>Нету парковочного места с таким id</p>
+    {% endif %}
+</main>
+{% endblock %}

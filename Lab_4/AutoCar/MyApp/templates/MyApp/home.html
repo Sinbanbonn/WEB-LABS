@@ -1,0 +1,67 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+{% load static %}
+<header><h1 align="center">Автостоянка AutoCar</h1></header>
+<main class="content">
+    <section>
+<h3>Услуги, которые мы предоставляем клиентам:</h3>
+    <ul>
+        <li>Круглосуточное отопление стоянки (что сохраняет время автовладельцев на прогрев автомобиля)</li>
+        <li>Автоматизированная система наблюдения (т.е. гарантии безопасности автомобиля)</li>
+        <li>Контроль всех выходов из комплекса автостоянки</li>
+        <li>Предоставление закрытого парковочного места (что дает возможность избежать загрязнения от погодных условий)</li>
+    </ul>
+    </section>
+    <section>
+        <h3>Количество клиентов: {{num_of_clients}}</h3>
+        <h3>Количесвто автомобилей: {{num_of_cars}}</h3>
+        <h3>Средняя цена за парковочное место: {{average_price}} $</h3>
+    </section>
+<hr>
+<h3 align="center">Краткая информация о последней опубликованной статье:</h3>
+    <article>
+        <p><b>Название: </b> {{last_news.title}}</p>
+        <p><b>Краткое описание: </b>{{last_news.short_description}}</p>
+    </article>
+    <hr>
+    <div class="advertisement">
+        <a href="https://mak.by/ru/" target="blank">
+            <img src="{% static 'MyApp/images/banner.png' %} ", alt="Реклама" title="mak.by">
+        </a>
+    </div>
+    <hr>
+    <h3>Наши партнеры</h3>
+    <div class="partners">
+        <a href="https://www.tinkoff.ru/" class="partner-link" target="blank">
+            <img src="{% static 'MyApp/images/tinkoff.jpg'%}" alt="Логотип 1" class="partner-logo" title="Tinkoff" >
+        </a>
+
+        <a href="https://by.ebay.com/" class="partner-link" target="blank">
+            <img src="{% static 'MyApp/images/ebay.png'%}" alt="Логотип 2" class="partner-logo" title="Ebay" >
+        </a>
+
+        <a href="https://www.mercedes-benz.com/en/" class="partner-link" target="blank">
+            <img src="{% static 'MyApp/images/mercedes.png'%}" alt="Логотип 3" class="partner-logo" title="Mercedes-Benz" >
+        </a>
+
+        <a href="https://www.amazon.com/" class="partner-link" target="blank">
+            <img src="{% static 'MyApp/images/amazon.png'%}" alt="Логотип 4" class="partner-logo" title="Amazon" >
+        </a>
+
+        <a href="https://yandex.by/" class="partner-link" target="blank">
+            <img src="{% static 'MyApp/images/yandex.png'%}" alt="Логотип 5" class="partner-logo" title="Yandex" >
+        </a>
+    </div>
+    <aside class="sidebar">
+
+            <h2>Доп секции</h2>
+            <ul class="amenu">
+                {% for m in aside_menu %}
+                <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+                {% endfor %}
+            </ul>
+
+    </aside>
+</main>
+{% endblock %}

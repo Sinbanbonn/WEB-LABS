@@ -1,0 +1,26 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1 align="center">{{title}}</h1>
+    {% if coupon.count %}
+    <table bgcolor="#a9c0fc" border="1" cellpadding="8px" summary="Coupons">
+        <tr>
+            <th id="code">Код купона</th>
+            <th id="description">Описание</th>
+        </tr>
+        {% for c in coupon %}
+            <tr>
+                <td headers="code">{{c.code}}</td>
+                <td headers="description">{{c.description}}</td>
+            </tr>
+        {% endfor %}
+        <tr align="center">
+            <td colspan="2">Следите за обновлениями ;)</td>
+        </tr>
+    </table>
+    {% else %}
+      <p>Отсутствуют купоны</p>
+    {% endif %}
+</main>
+{% endblock %}

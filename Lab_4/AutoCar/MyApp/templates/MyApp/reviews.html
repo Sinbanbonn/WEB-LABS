@@ -1,0 +1,21 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<h1 align="center">{{title}}</h1>
+    {% if reviews.count %}
+         {% for r in reviews %}
+            <article>
+                <time datetime="{{r.time_create}}">{{r.time_create}}</time>
+                <address>{{r.username}}</address>
+                <p><b>Оценка: </b>{{r.mark}}</p>
+                <p>{{r.content}}</p>
+                <hr>
+            </article>
+        {% endfor %}
+    {% else %}
+      <p>Отсутствуют отзывы</p>
+    {% endif %}
+    <a href="{% url 'add_review_button' %}"><button>Добавить отзыв</button></a>
+</main>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h2>{{title}}</h2>
+<h3>Номера:</h3>
+{% if spaces.count %}
+    <ul>
+
+      {% for c in spaces %}
+      <li>
+        <a href="{{c.get_absolute_url}}">{{ c.number }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Нету ни одного парковочного места</p>
+    {% endif %}
+       <a href="{% url 'add_parking_space' %}"><button>Добавить</button></a>
+    </main>
+{% endblock %}

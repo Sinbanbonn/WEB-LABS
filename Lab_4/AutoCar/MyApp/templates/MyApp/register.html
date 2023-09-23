@@ -1,0 +1,13 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1><ul>{{title}}</ul></h1>
+
+ <form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Регистрация</button>
+</form>
+</main>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+{% load static %}
+<main>
+<h1 align="center">{{title}}</h1>
+    <section>
+        <h2>Нащ логотип: </h2>
+        <a href="{% static 'MyApp/images/favicon.ico'%}" download>
+            <img src="{% static 'MyApp/images/favicon.ico'%}" alt="Логотип компании" title="Logo"
+                 width="150" height="150">
+        </a>
+        <p><b>Цитата дня: </b>
+            <q cite="Euhene Kuznetsov">Ваш автомобиль заслуживает лучшего места.<cite> Eugene Kuznetsov</cite></q></p>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">История создания</h2>
+        <p>
+            Год 1995:
+            Компания <i>"AutoCar"</i> была основана в 1995 году Ивановым Владимиром. Он стал основателем и первым
+            председателем компании. Идея создания <i>"AutoCar"</i> пришла Владимиру, когда он столкнулся с проблемой
+            поиска парковочного места в самых оживленных частях города.
+        </p>
+        <p>
+            В течение первых нескольких лет компания <i>"AutoCar"</i> была маленьким местным бизнесом, предоставляющим
+            услуги по предоставлению безопасных и удобных мест для парковки автомобилей. Владимир использовал свои
+            личные сбережения и заемные средства для покупки земельных участков и создания парковки.
+        </p>
+        <p>
+            Компания разработала уникальную систему управления и контроля доступа автомобилей на парковке.
+            Она позволяет автовладельцам забронировать парковочное место заранее и эффективно отслеживать въезд и
+            выезд автомобилей с помощью электронных брелоков.
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Сокращения</h2>
+        <ol>
+            <li><abbr title="Автостоянка">АС</abbr> - Автостоянка</li>
+            <li><abbr title="Парковочное место">ПМ</abbr> - Парковочное место</li>
+            <li><abbr title="Бронирование места">БМ</abbr> - Бронирование места</li>
+            <li><abbr title="Аренда места">АМ</abbr> - Аренда места</li>
+        </ol>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Определения</h2>
+        <ol>
+            <li><dfn title="Автостоянка">Автостоянка</dfn> - специализированное место для временной стоянки
+                автомобилей.</li>
+            <li><dfn title="Парковочное место">Парковочное место</dfn> - определенное пространство, предназначенное
+                для парковки автомобиля.</li>
+            <li><dfn title="Бронирование места">Бронирование места</dfn> - процесс предварительного заказа и
+                резервирования парковочного места.</li>
+            <li><dfn title="Аренда места">Аренда места</dfn> - услуга предоставления парковочного
+                места на определенный период времени. </li>
+        </ol>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center"> Четверостишие</h2>
+        <p align="center">
+            На "Автостоянке" <wbr>где-то вдали,<br>
+            Светит солнце, и <wbr>мир вокруг ярче. <br>
+            Автомобили стоят<wbr> в строю,<br>
+            Здесь каждый находит<wbr> свое место<br>
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Листинг кода</h2>
+        <pre >
+            <code>
+                def print_hello():
+                    <var>name</var> = 'Alex'
+                    print("Hello ${name}")
+            </code>
+        </pre>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Сертификат</h2>
+        <br><br>
+        <figure >
+            <p align="center"><b><font size="4" color="blue">ЕДИНЫЙ РЕЕСТР АВТОСТОЯНОК</font></b></p>
+            <p align="center"><b><font size="5" color="red">СВИДЕТЕЛЬСТВО</font></b></p>
+            <p align="center"><b><font size="4" color="blue">О ВНЕСЕНИИ СВЕДЕНИЙ</font></b></p>
+            <p align="right"><data value="2005-12-7">7 декабря 2005</data></p>
+            <p align="center"><b><font size="4">Общество с ограниченной отвественностью <i>"AutoCar"</i></font></b></p>
+            <p align="center"><b><font size="4"><u>Реестровый номер: 8241</u></font></b></p>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <p align="left">Директор: Сидаренко А.А.</p>
+            <hr color="blue" width="85%" align="center">
+            <p align="right">Телефон: <em>+375445624359</em></p>
+            <p align="right">Почта: <em>jenakuuuuuz@gmail.com</em></p>
+            <figcaption>Сертификат</figcaption>
+        </figure>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Как правильно выбрать паркинг в ЖК</h2>
+        <p align="center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8kH_GaICSOo?si=9vV0N7A42JEkTgcm"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                     encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h2 align="center">Музыка</h2>
+        <p align="center"><b>Trevor Daniel – Falling</b></p>
+        <p align="center">
+            <audio controls  src="{% static 'MyApp/audio/song1.ogg'%}" >
+                Музыка не доступна
+            </audio>
+        </p>
+    </section>
+    <section>
+        <p align="right">
+            <b>Реквизиты для поддержки:</b><br>
+            5578 4586 7077 0064
+        </p>
+    </section>
+</main>
+{% endblock %}

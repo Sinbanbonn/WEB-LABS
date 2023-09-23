@@ -1,0 +1,20 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+<main>
+<h1>{{title}}</h1>
+{% if my_cars.count %}
+    <ul>
+
+      {% for c in my_cars %}
+      <li>
+        <a href="{{ c.get_absolute_url }}">{{ c.number }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Нету ни одной машины</p>
+    {% endif %}
+</main>
+{% endblock %}
