@@ -6,8 +6,8 @@
     {% if coupon.count %}
     <table bgcolor="#a9c0fc" border="1" cellpadding="8px" summary="Coupons">
         <tr>
-            <th id="code">Код купона</th>
-            <th id="description">Описание</th>
+            <th id="code">Coupon Code</th>
+            <th id="description">Description</th>
         </tr>
         {% for c in coupon %}
             <tr>
@@ -16,11 +16,11 @@
             </tr>
         {% endfor %}
         <tr align="center">
-            <td colspan="2">Следите за обновлениями ;)</td>
+            <td colspan="2">Stay tuned for updates ;)</td>
         </tr>
     </table>
     {% else %}
-      <p>Отсутствуют купоны</p>
+      <p>No coupons available</p>
     {% endif %}
 </main>
 {% endblock %}

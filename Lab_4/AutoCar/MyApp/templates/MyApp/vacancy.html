@@ -8,17 +8,17 @@
          {% for v in vacancy %}
             <article>
                 <h3 align="">{{v.name}}</h3>
-                <p><b>Обязанности: </b>{{v.description}}</p>
+                <p><b>Responsibilities: </b>{{v.description}}</p>
                 <hr>
             </article>
         {% endfor %}
     </section>
     <section>
-        <h2 align="center">Другие вакансии</h2>
-        <iframe src="https://ru.linkedin.com/" width="100%" height="600" frameborder="1">Обновите версию браузера</iframe>
+        <h2 align="center">Other Vacancies</h2>
+        <iframe src="https://en.linkedin.com/" width="100%" height="600" frameborder="1">Please update your browser</iframe>
     </section>
     {% else %}
-      <p>Отсутствуют вакансии</p>
+      <p>No vacancies available</p>
     {% endif %}
 </main>
 {% endblock %}

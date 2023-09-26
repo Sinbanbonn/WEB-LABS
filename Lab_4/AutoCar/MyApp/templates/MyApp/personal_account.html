@@ -3,14 +3,14 @@
 {% block content %}
 <main>
 <div class="data-container">
-    <p>Часовой пояс: {{zone}}</p>
-    <p>Дата: {{cur_date}}</p>
-    <strong>Курс Биткойна:</strong>
+    <p>Time Zone: {{zone}}</p>
+    <p>Date: {{cur_date}}</p>
+    <strong>Bitcoin Exchange Rate:</strong>
     <p>USD: {{USD}}</p>
     <p>EUR: {{EUR}}</p>
 </div>
-<h1>Добро пожаловать, {{user_name}}!</h1>
-<h2>Ваши автомобили:</h2>
+<h1>Welcome, {{user_name}}!</h1>
+<h2>Your Cars:</h2>
 
 {% if my_cars.count %}
     <ul>
@@ -23,7 +23,7 @@
 
     </ul>
     {% else %}
-      <p>Нету ни одной машины</p>
+      <p>No cars available</p>
     {% endif %}
     </main>
 {% endblock %}

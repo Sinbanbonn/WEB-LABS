@@ -1,21 +1,21 @@
 {% extends 'MyApp/base.html' %}
 
 {% block content %}
-<main xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<main>
 <h1 align="center">{{title}}</h1>
     {% if contacts.count %}
          {% for c in contacts %}
             <section>
-                <img src="{{c.photo.url}}" alt = "photo" width="140" height="150">
+                <img src="{{c.photo.url}}" alt="photo" width="140" height="150">
                 <address>{{c.name}}</address>
-                <p><b>Обязанности: </b>{{c.description}}</p>
-                <p><b>Телефон: </b>{{c.telephone}}</p>
-                <p><b>Почта: </b>{{c.email}}</p>
+                <p><b>Responsibilities: </b>{{c.description}}</p>
+                <p><b>Phone: </b>{{c.telephone}}</p>
+                <p><b>Email: </b>{{c.email}}</p>
                 <hr>
             </section>
          {% endfor %}
     {% else %}
-      <p>Отсутствуют контакты</p>
+      <p>No contacts available</p>
     {% endif %}
 </main>
 {% endblock %}

@@ -11,13 +11,13 @@
         <time datetime="{{n.time_create}}" itemprop="dateCreated">{{n.time_create}}</time>
         <p itemprop="description">{{n.short_description| linebreaks}}</p>
         <a href="{{ n.get_absolute_url }}">
-            <button>Читать далее</button>
+            <button>Read More</button>
         </a>
         </article>
         {% endfor %}
-    <p align="center"><a href="#top_header">Начало страницы</a></p>
+    <p align="center"><a href="#top_header">Back to Top</a></p>
     {% else %}
-      <p>Нету новостей</p>
+      <p>No news available</p>
     {% endif %}
 </main>
 {% endblock %}

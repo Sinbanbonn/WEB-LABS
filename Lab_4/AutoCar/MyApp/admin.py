@@ -25,7 +25,6 @@ class CarAdmin(admin.ModelAdmin):
     def det_invoices(self, request, qs: QuerySet):
         for car in qs:
             try:
-                # print('Номер места:', car.parking_space)
                 space = car.parking_space
                 invoice = PaymentInvoice()
                 invoice.parking_number = space.number

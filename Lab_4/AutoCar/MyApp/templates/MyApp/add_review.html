@@ -6,11 +6,11 @@
     <form action="{% url 'review_handler' %}"  method="post">
         {% csrf_token %}
         <fieldset title="add_review">
-            <legend>Ваш отзыв</legend>
+            <legend>Your Review</legend>
         <div>
-            <label for="rating">Оценка</label>
+            <label for="rating">Rating</label>
             <select id="rating" name="rating" required>
-                <option value="" disabled selected>Выберите оценку</option>
+                <option value="" disabled selected>Select a Rating</option>
                 {% for mark in marks %}
                 <option value="{{mark}}">{{mark}}</option>
                 {% endfor %}
@@ -18,12 +18,12 @@
         </div>
         <br>
         <div>
-            <label>Отзыв:</label>
+            <label>Review:</label>
             <textarea id="review" name="review" rows="4" cols="70" required></textarea>
         </div>
         <br>
         <div>
-            <input type="submit" value="Отправить">
+            <input type="submit" value="Submit">
         </div>
         </fieldset>
     </form>

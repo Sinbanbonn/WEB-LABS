@@ -7,11 +7,11 @@
       <div class="client-info">
 
     <h2>{{title}}</h2>
-    <p><strong>Номер автомобиля: </strong> {{c.number}}</p>
-    <p><strong>Марка:</strong> {{c.brand}}</p>
-    <p><strong>Долг:</strong> {{c.debt}}</p>
-    <p><strong>Владельцы:</strong> {{c.display_client}}</p>
-          <p><strong>Парковочное место:</strong> {{message}}</p>
+    <p><strong>Car Number:</strong> {{c.number}}</p>
+    <p><strong>Brand:</strong> {{c.brand}}</p>
+    <p><strong>Debt:</strong> {{c.debt}}</p>
+    <p><strong>Owners:</strong> {{c.display_client}}</p>
+          <p><strong>Parking Space:</strong> {{message}}</p>
 
       </div>
       {% endfor %}
@@ -19,35 +19,35 @@
 
 
         {% if spaces.count %}
-        <h2>Счета на оплату для данного авто:</h2>
+        <h2>Payment Invoices for This Car:</h2>
 
       {% for sp in spaces %}
 
       <div class="client-info">
 
-          <p><strong>Номер парковочного места: </strong> {{sp.parking_number}}</p>
-          <p><strong>Цена за парковочное место:</strong> {{sp.price}}</p>
-          <p><strong>Зачисление:</strong> {{sp.enrollment}}</p>
-          <p><strong>Дата выставления счета:</strong> {{sp.accrual_date}}</p>
-          <p><strong>Дата зачисления:</strong> {{sp.payment_date}}</p>
+          <p><strong>Parking Space Number:</strong> {{sp.parking_number}}</p>
+          <p><strong>Price per Parking Space:</strong> {{sp.price}}</p>
+          <p><strong>Enrollment:</strong> {{sp.enrollment}}</p>
+          <p><strong>Invoice Date:</strong> {{sp.accrual_date}}</p>
+          <p><strong>Payment Date:</strong> {{sp.payment_date}}</p>
 
       </div>
       {% endfor %}
 
-        <h2>Произвести оплату:</h2>
+        <h2>Make Payment:</h2>
         <form action="{% url 'car' id %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Оплатить</button>
+            <button type="submit">Pay</button>
         </form>
 
 
         {% else %}
-      <h2>У данного авто нету счетов на оплату</h2>
+      <h2>This Car Has No Payment Invoices</h2>
         {% endif %}
 
     {% else %}
-      <p>Нету авто с таким id </p>
+      <p>No car with such id </p>
     {% endif %}
 </main>
 {% endblock %}

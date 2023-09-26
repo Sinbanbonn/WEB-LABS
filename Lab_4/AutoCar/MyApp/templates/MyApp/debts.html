@@ -4,28 +4,28 @@
 <main>
 <div class="client-info">
 
-    <h2>Клиент с максимальным долгом </h2>
-    <p><strong>Имя: </strong> {{max_debt_client.name}}</p>
-    <p><strong>Телефон:</strong> {{max_debt_client.telephone}}</p>
-    <p><strong>Долг:</strong> {{max_debt}} $</p>
-    <p><strong>Дата последнего платежа:</strong> {{last_date}}</p>
+    <h2>Client with Maximum Debt </h2>
+    <p><strong>Name: </strong> {{max_debt_client.name}}</p>
+    <p><strong>Phone:</strong> {{max_debt_client.telephone}}</p>
+    <p><strong>Debt:</strong> {{max_debt}} $</p>
+    <p><strong>Last Payment Date:</strong> {{last_date}}</p>
 
       </div>
 
 <div class="client-info">
 
-    <h2>Авто с минимальным долгом </h2>
-    <p><strong>Номер: </strong> {{car_min.number}}</p>
-    <p><strong>Марка:</strong> {{car_min.brand}}</p>
-    <p><strong>Долг:</strong> {{min_debt}} $</p>
+    <h2>Car with Minimum Debt </h2>
+    <p><strong>Number: </strong> {{car_min.number}}</p>
+    <p><strong>Brand:</strong> {{car_min.brand}}</p>
+    <p><strong>Debt:</strong> {{min_debt}} $</p>
       </div>
 
-    <h2>Долги по клиентам</h2>
+    <h2>Debts by Clients</h2>
      {% for l in list %}
       <div class="client-info">
 
-    <p><strong>Имя: </strong> {{l.0}}</p>
-    <p><strong>Долг: </strong> {{l.1}} $</p>
+    <p><strong>Name: </strong> {{l.0}}</p>
+    <p><strong>Debt: </strong> {{l.1}} $</p>
 
       </div>
       {% endfor %}

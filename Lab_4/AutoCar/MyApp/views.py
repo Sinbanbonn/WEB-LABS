@@ -61,44 +61,44 @@ def is_admin(user):
 def get_menu(request):
     # user_menu = menu.copy()
     if not request.user.is_authenticated:
-        new_menu = [  # для незарегистрированных
-            {'title': "Главная страница", 'url_name': 'home'},
-            {'title': "Новости", 'url_name': 'news'},
-            {'title': "Отзывы", 'url_name': 'reviews'},
-            {'title': "Регистрация", 'url_name': 'register'},
-            {'title': "Войти", 'url_name': 'login'}
+        new_menu = [
+            {'title': "Home Page", 'url_name': 'home'},
+            {'title': "News", 'url_name': 'news'},
+            {'title': "Reviews", 'url_name': 'reviews'},
+            {'title': "Register", 'url_name': 'register'},
+            {'title': "Log In", 'url_name': 'login'}
         ]
     elif request.user.is_staff:
-        new_menu = [  # для адмниа
-            {'title': "Главная страница", 'url_name': 'home'},
-            {'title': "Новости", 'url_name': 'news'},
-            {'title': "Отзывы", 'url_name': 'reviews'},
-            {'title': "Клиенты", 'url_name': 'clients'},
-            {'title': "Авто", 'url_name': 'cars'},
-            {'title': "Парковочные места", 'url_name': 'parking_spaces'},
-            {'title': "Долги", 'url_name': 'debts'},
-            {'title': "Диаграмма", 'url_name': 'chart_view'},
-            {'title': "Выйти", 'url_name': 'logout'}
+        new_menu = [
+            {'title': "Home Page", 'url_name': 'home'},
+            {'title': "News", 'url_name': 'news'},
+            {'title': "Reviews", 'url_name': 'reviews'},
+            {'title': "Clients", 'url_name': 'clients'},
+            {'title': "Cars", 'url_name': 'cars'},
+            {'title': "Parking Spaces", 'url_name': 'parking_spaces'},
+            {'title': "Debts", 'url_name': 'debts'},
+            {'title': "Charts", 'url_name': 'chart_view'},
+            {'title': "Log Out", 'url_name': 'logout'}
         ]
+
     else:
-        new_menu = [  # для зарегистрированных
-            {'title': "Главная страница", 'url_name': 'home'},
-            {'title': "Личный кабинет", 'url_name': 'personal_account'},
-            {'title': "Новости", 'url_name': 'news'},
-            {'title': "Отзывы", 'url_name': 'reviews'},
-            {'title': "Выйти", 'url_name': 'logout'}
+        new_menu = [
+            {'title': "Home Page", 'url_name': 'home'},
+            {'title': "Personal Account", 'url_name': 'personal_account'},
+            {'title': "News", 'url_name': 'news'},
+            {'title': "Reviews", 'url_name': 'reviews'},
+            {'title': "Log Out", 'url_name': 'logout'}
         ]
     return new_menu
 
 
 aside_menu = [
-    {'title': "О компании", 'url_name': 'about_company'},
-    {'title': "Вопросы", 'url_name': 'question'},
-    {'title': "Контакты", 'url_name': 'contacts'},
-    {'title': "Вакансии", 'url_name': 'vacancies'},
-    {'title': "Купоны", 'url_name': 'coupons'}
+    {'title': "About Us", 'url_name': 'about_company'},
+    {'title': "Questions", 'url_name': 'question'},
+    {'title': "Contacts", 'url_name': 'contacts'},
+    {'title': "Vacancies", 'url_name': 'vacancies'},
+    {'title': "Coupons", 'url_name': 'coupons'}
 ]
-
 
 def home(request):
     logger.info("page home")
@@ -119,7 +119,7 @@ def home(request):
 
     new_menu = get_menu(request)
     context = {
-        'title': 'Главная страница',
+        'title': 'Main Page',
         'menu': new_menu,
         'num_of_clients': num_of_clients,
         'num_of_cars': num_of_cars,
@@ -137,7 +137,7 @@ def clients(request):
     clien = Client.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': 'Список клиентов',
+        'title': 'Client list',
         'menu': new_menu,
         'my_clients': clien
     }
@@ -149,7 +149,7 @@ def show_client(request, client_id):
     cl = Client.objects.filter(id=client_id)
     new_menu = get_menu(request)
     context = {
-        'title': 'Информация о клиенте',
+        'title': 'Client info',
         'menu': new_menu,
         'my_client': cl
     }
@@ -162,7 +162,7 @@ def cars(request):
     cars = Car.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': 'Список автомобилей',
+        'title': 'Cars list',
         'menu': new_menu,
         'my_cars': cars
     }
@@ -182,7 +182,7 @@ def show_car(request, car_id):
             sp = car2.parking_space
             message = sp
         except:
-            message = 'Нету'
+            message = 'None'
 
         #print(message)
 
@@ -208,7 +208,7 @@ def show_car(request, car_id):
         form = PayForm()
     new_menu = get_menu(request)
     context = {
-        'title': 'Информация об автомобиле',
+        'title': 'Car info',
         'menu': new_menu,
         'my_car': car,
         'spaces': spaces,
@@ -225,7 +225,7 @@ def parking_spaces(request):
     spaces = ParkingSpace.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': 'Список парковочных мест',
+        'title': 'Parking places',
         'menu': new_menu,
         'spaces': spaces
     }
@@ -253,7 +253,7 @@ def show_park_space(request, sp_id):
         form = UpdatePrice()
     new_menu = get_menu(request)
     context = {
-        'title': 'Информация о парковочном месте',
+        'title': 'Park space info',
         'menu': new_menu,
         'space': space,
         'form': form,
@@ -276,7 +276,7 @@ def add_parking_space(request):
         form = AddParkSpace()
     new_menu = get_menu(request)
     context = {
-        'title': 'Добавление парковочного места',
+        'title': 'Adding of park space',
         'menu': new_menu,
         'form': form
     }
@@ -291,7 +291,7 @@ def delete_park_space(request, sp_id):
         return redirect('parking_spaces')
     except:
         logger.error("removing a parking space")
-        return HttpResponseNotFound("<h2>Ошибка удаления</h2>")
+        return HttpResponseNotFound("<h2>Error</h2>")
 
 
 @user_passes_test(is_admin)
@@ -381,7 +381,7 @@ def register(request):
 
     new_menu = get_menu(request)
     context = {
-        'title': 'Регистрация',
+        'title': 'Registration',
         'menu': new_menu,
         'form': form
     }
@@ -390,12 +390,13 @@ def register(request):
 
 
 menu_for_reg = [
-    {'title': "Главная страница", 'url_name': 'home'},
-    {'title': "Новости", 'url_name': 'news'},
-    {'title': "Отзывы", 'url_name': 'reviews'},
-    {'title': "Регистрация", 'url_name': 'register'},
-    {'title': "Войти", 'url_name': 'login'},
+    {'title': "Home Page", 'url_name': 'home'},
+    {'title': "News", 'url_name': 'news'},
+    {'title': "Reviews", 'url_name': 'reviews'},
+    {'title': "Register", 'url_name': 'register'},
+    {'title': "Log In", 'url_name': 'login'},
 ]
+
 
 
 class LoginUser(LoginView):
@@ -453,22 +454,26 @@ def chart_view(request):
     data = []
     labels = []
     spaces = ParkingSpace.objects.all()
+
     for sp in spaces:
         data.append(sp.price)
         labels.append(str(sp.number))
+
     plt.bar(labels, data)
-    plt.xlabel('Номера')
-    plt.ylabel('Цены')
-    plt.title('Диаграмма цен парковочных мест')
+    plt.xlabel('Numbers')
+    plt.ylabel('Prices')
+    plt.title('Parking Space Price Chart')
+
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png')
+
     return HttpResponse(buffer.getvalue(), content_type='image/png')
 
 
 def about_company(request):
     new_menu = get_menu(request)
     context = {
-        'title': 'О компании',
+        'title': 'About',
         'menu': new_menu
     }
     return render(request, 'MyApp/about_company.html', context=context)
@@ -478,7 +483,7 @@ def news(request):
     articles = News.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': 'Новости',
+        'title': 'News',
         'menu': new_menu,
         'news': articles
     }
@@ -501,8 +506,8 @@ def questions(request):
     questions = Question.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': "Вопросы",
-        'header': "Часто задаваемые вопросы",
+        'title': "Questions",
+        'header': "FAQ",
         'menu': new_menu,
         'questions':  questions
     }
@@ -513,7 +518,7 @@ def reviews(request):
     rev = Review.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': "Отзывы",
+        'title': "Comments",
         'menu': new_menu,
         'reviews': rev
     }
@@ -531,7 +536,7 @@ def add_review(request):
     new_menu = get_menu(request)
     marks = range(1, 11)
     context = {
-        'title': "Добавление отзыва",
+        'title': "Add comment",
         'menu': new_menu,
         'marks': marks
     }
@@ -556,7 +561,7 @@ def contacts(request):
     contact = Employee.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': "Контакты",
+        'title': "Contacts",
         'menu': new_menu,
         'contacts': contact
     }
@@ -567,7 +572,7 @@ def vacancies(request):
     vacancy = Vacancy.objects.all()
     new_menu = get_menu(request)
     context = {
-        'title': "Вакансии",
+        'title': "Vacancy",
         'menu': new_menu,
         'vacancy': vacancy
     }
@@ -578,7 +583,7 @@ def coupons(request):
     coupon = Coupon.objects.filter(is_valid=True)
     new_menu = get_menu(request)
     context = {
-        'title': "Купоны",
+        'title': "Coupons",
         'menu': new_menu,
         'coupon': coupon
     }
@@ -586,7 +591,7 @@ def coupons(request):
 
 
 def pageNotFound(request, exception):
-    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+    return HttpResponseNotFound('<h1>Not found</h1>')
 
 
 

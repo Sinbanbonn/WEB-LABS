@@ -2,39 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
 
     {% load static %}
 
-    <meta name="author" content="Eugene Kuznetsov">
-    <meta name="description" content="Круглосуточная отапливаемая автостоянка 'AutoCar'">
+    <meta name="author" content="Andrey Logvinov">
+    <meta name="description" content=" Parking 'AutoCar'">
     <link rel="stylesheet" type="text/css" href="{% static 'MyApp/css/styles.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'MyApp/images/favicon.ico' %}">
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f0f0f0;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu a:hover {
+            color: #555;
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .instagram-logo {
+            width: 24px;
+            height: 24px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
 
-{% block mainmenu %}
+<header>
+    <h1>{{ title }}</h1>
+</header>
+
 <nav>
     <ul class="menu">
         {% for m in menu %}
-        <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+        <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
         {% endfor %}
     </ul>
 </nav>
-{% endblock mainmenu %}
 
-{% block content %}
-{% endblock %}
-{% block footer %}
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
 <footer>
     <address>
-    Made by Eugene  Kuznetsov
-    <a href = "https://www.instagram.com/evgeny_kuznetsovvv/" target="_blank">
-        <img src="{% static 'MyApp/images/inst.png' %}" alt = "Instagram" class = "instagram-logo" title="Instagram">
-    </a>
+        Made by Andrew Logvinov
+        <a href="https://www.instagram.com/sinbanbon/" target="_blank">
+            <img src="{% static 'MyApp/images/inst.png' %}" alt="Instagram" class="instagram-logo" title="Instagram">
+        </a>
     </address>
 </footer>
-{% endblock %}
+
 </body>
 </html>

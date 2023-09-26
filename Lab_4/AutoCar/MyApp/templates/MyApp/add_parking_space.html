@@ -7,7 +7,7 @@
 <form action="{% url 'add_parking_space' %}" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit">Добавить</button>
+    <button type="submit">Add</button>
 </form>
 </main>
 {% endblock %}

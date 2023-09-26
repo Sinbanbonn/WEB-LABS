@@ -7,15 +7,15 @@
       <div class="client-info">
 
     <h2>{{title}}</h2>
-    <p><strong>Имя:</strong> {{c.name}}</p>
-    <p><strong>Телефон:</strong> {{c.telephone}}</p>
-    <p><strong>Дата Рождения:</strong> {{c.date_of_birth}}</p>
-    <p><strong>Машины:</strong> {{c.display_cars}}</p>
+    <p><strong>Name:</strong> {{c.name}}</p>
+    <p><strong>Phone:</strong> {{c.telephone}}</p>
+    <p><strong>Date of Birth:</strong> {{c.date_of_birth}}</p>
+    <p><strong>Cars:</strong> {{c.display_cars}}</p>
 
       </div>
       {% endfor %}
     {% else %}
-      <p>Нету клиента c таким id </p>
+      <p>No client with such id </p>
     {% endif %}
     </main>
 {% endblock %}
